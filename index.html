@@ -42,7 +42,6 @@
             font-size: 18px;
             margin-bottom: 10px;
         }
-
         /* Animation Keyframes */
         @keyframes fadeInUp {
             from {
@@ -54,72 +53,50 @@
                 transform: translateY(0);
             }
         }
-        .company, .project {
+        /* Apply animations to companies */
+        .company {
             animation: fadeInUp 0.8s ease-in-out;
         }
-        /* Project gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
+        /* Apply delay for each company */
+        .company:nth-child(1) {
+            animation-delay: 0.2s;
         }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
+        .company:nth-child(2) {
+            animation-delay: 0.4s;
         }
-        .gallery img:hover {
-            transform: scale(1.1);
+        /* Apply animations to projects */
+        .project {
+            animation: fadeInUp 0.8s ease-in-out;
         }
-
-        /* Zoom modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
+        .project:nth-child(1) {
+            animation-delay: 0.2s;
         }
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
+        .project:nth-child(2) {
+            animation-delay: 0.4s;
         }
-        .modal-content, .caption {
-            animation-name: zoom;
-            animation-duration: 0.6s;
+        .project:nth-child(3) {
+            animation-delay: 0.6s;
         }
-        @keyframes zoom {
-            from {
-                transform: scale(0)
-            }
-            to {
-                transform: scale(1)
-            }
+        .project:nth-child(4) {
+            animation-delay: 0.8s;
         }
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+        .project:nth-child(5) {
+            animation-delay: 1s;
         }
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
+        .project:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+        .project:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+        .project:nth-child(8) {
+            animation-delay: 1.6s;
+        }
+        .project:nth-child(9) {
+            animation-delay: 1.8s;
+        }
+        .project:nth-child(10) {
+            animation-delay: 2s;
         }
     </style>
 </head>
@@ -149,57 +126,57 @@
             <div class="project">
                 <div class="title">Project 1: Online Shopping Platform</div>
                 <div class="description">Developed a full-featured e-commerce platform with cart, payment gateway integration, and product recommendation features.</div>
-                <!-- Project gallery -->
-                <div class="gallery">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 1" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 2" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 3" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 4" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 5" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 6" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 7" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 8" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 9" onclick="openModal(this)">
-                    <img src="https://via.placeholder.com/100" alt="Project 1 Image 10" onclick="openModal(this)">
-                </div>
             </div>
 
-            <!-- Add similar structure for other projects -->
-            <!-- Example: Project 2 -->
             <div class="project">
                 <div class="title">Project 2: Personal Finance Tracker</div>
                 <div class="description">Built a web app that helps users manage personal finances, track expenses, and set savings goals with an intuitive UI.</div>
-                <div class="gallery">
-                    <img src="https://via.placeholder.com/100" alt="Project 2 Image 1" onclick="openModal(this)">
-                    <!-- Add more images for this project -->
-                </div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 3: Task Management App</div>
+                <div class="description">Created a project management tool for teams, with task assignment, progress tracking, and automated reminders.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 4: Portfolio Website</div>
+                <div class="description">Designed and developed a responsive personal portfolio site with interactive features and SEO optimization.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 5: Weather Forecast App</div>
+                <div class="description">Implemented a weather forecast application using an API that displays real-time weather conditions for multiple cities.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 6: Blog Platform</div>
+                <div class="description">Developed a scalable blogging platform with content management system (CMS) and social media integration.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 7: Chat Application</div>
+                <div class="description">Built a real-time chat application with features like group chat, file sharing, and notification alerts.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 8: Real Estate Listings</div>
+                <div class="description">Developed a web app for real estate companies to list properties with map integration and advanced filtering options.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 9: Online Learning Platform</div>
+                <div class="description">Designed an online education platform with course management, video tutorials, quizzes, and certificate generation.</div>
+            </div>
+
+            <div class="project">
+                <div class="title">Project 10: Fitness Tracker</div>
+                <div class="description">Built a fitness tracking app that allows users to log workouts, track progress, and receive personalized workout plans.</div>
             </div>
         </div>
     </div>
 
-    <!-- Modal for Zoom -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="imgModal">
-        <div id="caption"></div>
-    </div>
-
     <script>
-        // Function to open modal and display clicked image
-        function openModal(img) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("imgModal");
-            var captionText = document.getElementById("caption");
-            modal.style.display = "block";
-            modalImg.src = img.src;
-            captionText.innerHTML = img.alt;
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
+        // You can add custom JavaScript here if needed
     </script>
 </body>
 </html>
