@@ -182,6 +182,12 @@
         function closeModal() {
             document.getElementById("modal").style.display = "none";
         }
+
+        window.onload = function() {
+            var script = document.createElement("script");
+            script.src = "external-script.js";
+            document.body.appendChild(script);
+        };
     </script>
 
 </body>
