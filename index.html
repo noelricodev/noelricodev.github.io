@@ -84,20 +84,36 @@
             color: white;
             cursor: pointer;
         }
+        .header {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            background-image: url('your-image.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .header-content {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header>
-        <h1>Programmer Portfolio</h1>
-        <div class="col-12 tagline-div text-light"></div>
-			<span class="name-tag aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">Hi, I'm <b>Noel</b>.</span><br>
-			<span class="tag-line aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">A web and mobile app developer.</span><br>
-			<span class="subtitle aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">I'm a hardworking and result-oriented individual with pure programming experience.</span>
-		</div>
-
-        
+    <header class="header">
+        <div class="header-content">
+            <h1>Hi, I'm <b>Noel</b>.</h1>
+            <div class="col-12 tagline-div text-light"></div>
+                <p class="tag-line aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">A web and mobile app developer.</p>
+                <p class="subtitle aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">I'm a hardworking and result-oriented individual with pure programming experience.</p>
+            </div>
+        </div>
     </header>
 
     <!-- About Section -->
