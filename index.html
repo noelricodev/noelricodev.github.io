@@ -15,22 +15,12 @@
         h1, h2 {
             text-align: center;
         }
-        section {
-            padding: 50px 0;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.5s ease;
-        }
-        .active {
-            opacity: 1;
-            transform: translateY(0);
-        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        .about, .companies, .projects {
+        .companies, .projects {
             display: flex;
             justify-content: space-around;
             margin-bottom: 30px;
@@ -85,8 +75,10 @@
             cursor: pointer;
         }
         .header {
+            margin: 0;
+            padding: 0;
             width: 100%;
-            height: 630px; /* Adjust height as needed */
+            height: 100vh;
             background-image: url('imgs/bg.png'); /* Replace with your image */
             background-size: cover;
             background-position: center;
@@ -96,10 +88,42 @@
             text-align: center;
             color: white;
         }
-
         .header-content {
-            padding: 20px;
             background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
+        }
+        .all {
+            /* padding: 50px 0; */
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .about {
+            width: 99.7%;
+            height: 100vh;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1s ease;
+            border-style: solid;
+            border-color: rgb(5, 6, 92);
+            border-width: 2px;
+        }
+        .aboutBG {
+            background-image: url('imgs/laptop.jpg'); /* Replace with the image URL */
+            background-size: cover; /* Ensures the image covers the entire div */
+            background-position: bottom; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            text-align: center;
+            color: white;
+            /* border-style: solid;
+            border-color: red; */
+        }
+        .active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -109,70 +133,71 @@
     <header class="header">
         <div class="header-content">
             <h2>Hi, I'm <b>Noel</b>.</h2>
-            <div class="col-12 tagline-div text-light"></div>
-                <h1 class="tag-line aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">A web and mobile app developer.</h1>
-                <h3 class="subtitle aos-init aos-animate" data-aos-duration="1000" data-aos="fade-in">I'm a hardworking and result-oriented individual with pure programming experience.</h3>
+            <div class="">
+                <h1>A web and mobile app developer.</h1>
+                <h3>I'm a hardworking and result-oriented individual with pure programming experience.</h3>
             </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>ABOUT</h2>
-            <div class="about">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-7">
-                        <center data-aos-duration="1000" data-aos="fade-up" class="aos-init aos-animate">
-                            <br><br>
-                            <span class="subtitle" style="line-height: 2em;">
-                                I'm Noel Rico, but you can just call me Noel.<br>
-                                I am a web and mobile app developer. Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
-                                I have been working for almost 8 years in the IT industry. I handled and performed different roles such as web designer,<br>
-                                front-end and back-end developer for mobile app and web app and game developer for local clients.<br> 
-                                I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, Javascript, Jquery, Angular and MySQL.<br> 
-                                I also have basic knowledge in React JS, Typescript and SQL Server.
-                            </span>
-                        </center>
-                    </div>
-                </div>
-            </div>
+    <section class="about aboutBG">
+        <h2>ABOUT</h2>
+        <div>
+            <br>
+            <pre class="" style="font-size: 13px;">
+            I'm Noel Rico, but you can just call me Noel.<br>
+        I am a web and mobile app developer. <br>
+                                                    Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
+                                    I have been working for almost 8 years in the IT industry. <br>
+                                        I handled and performed different roles such as web designer,<br>
+                                        front-end and back-end developer for mobile app and web app <br>
+                        and also game developer for local clients.<br> 
+                                                        I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, <br>
+                        Javascript, Jquery, Angular and MySQL.<br> 
+                                                        I also have basic knowledge in React JS, Typescript and SQL Server.
+            </pre>
         </div>
     </section>
 
     <!-- Companies Section -->
-    <section id="companies">
-        <div class="container">
+    <section class="all" id="companies">
+            <br>
             <h2>Companies I've Worked For</h2>
-            <div class="companies">
-                <div class="col-sm-6 pr-5 pl-5 pt-3 pb-3 aos-init" data-aos-duration="1000" data-aos="fade-up">
+            <div class="">
+                <br>
+                <div class="" style="display: block">
 					<center>
-						<div class="subtitle pr-5 pl-5">
-							<b>Upstart-Gorilla Geo Industries Inc.</b><br>
-							Currently working as a Senior Programmer. PGATECH Group, a Filipino-owned engineering organization that has endeavored to be at the forefront of specialty geoconstruction and materials testing in the Philippines since 1981.
-							<br><br>
-						</div>
-						<img src="imgs/PGATECH-Logo.png" width="250px">
+                        <img src="imgs/PGATECH-Logo.png" width="250px">
+                        <br><br>
+						<div class="">
+							<b>Upstart-Gorilla Geo Industries Inc.</b><br><br>
+							Currently working as a Senior Programmer. <br>
+                            PGATECH Group, a Filipino-owned engineering organization <br>
+                            that has endeavored to be at the forefront of specialty geoconstruction <br>
+                            and materials testing in the Philippines since 1981.
+						</div>						
 						<br><br>
 					</center>
-				</div>
-				<div class="col-sm-6 pr-5 pl-5 pt-3 pb-3 aos-init" data-aos-duration="1000" data-aos="fade-up">
+				</div> 
+				<div class="" style="display: block">
 					<center>
-						<div class="subtitle pr-5 pl-5">
-							<b>+632 Apps</b><br>
-							Worked as a regular Senior Programmer for 7 years. +632 Apps is a Software and Mobile App Development Company that focuses in creating solutions that promotes inventiveness.
-							<br><br>
+                        <img src="imgs/632apps.png" width="100px">
+                        <br><br>
+						<div class="" >
+							<b>+632 Apps</b><br><br>
+							Worked as a regular Senior Programmer for 7 years. <br>
+                            +632 Apps is a Software and Mobile App Development Company <br>
+                            that focuses in creating solutions that promotes inventiveness.
 						</div>
-						<img src="imgs/632apps.png" width="250px">
 						<br><br>
 					</center>
 				</div>
             </div>
-        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section class="all" id="projects">
         <div class="container">
             <h2>Projects</h2>
             <div class="projects">
