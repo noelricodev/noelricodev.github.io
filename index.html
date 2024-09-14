@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <style>
+        html *{
+            font-family:monospace;
+        }
         /* Basic styles */
         body {
             font-family: Arial, sans-serif;
@@ -15,24 +18,52 @@
         h1, h2 {
             text-align: center;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .companies, .projects {
+        
+        .companies{
             display: flex;
             justify-content: space-around;
             margin-bottom: 30px;
         }
-        .company, .project {
+        .company {
             width: 45%;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 10px;
             text-align: center;
+        }
+        .project {
+            width: 90%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            border-radius: 5px;
+            text-align: center;
             cursor: pointer;
+        }
+        .projects {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .projectBG {
+            z-index: -10;
+            position:absolute;
+            width: 100%;
+            height: 180vh;
+            background: linear-gradient(to bottom, #010c19, #0a2a70);
+            /* background-image: url('imgs/matrix.jpg');
+            background-size: cover; 
+            background-position: bottom;
+            background-repeat: no-repeat;
+            color: white; */
+            /* border-style: solid;
+            border-color: red; */
         }
         /* Image gallery */
         .gallery {
@@ -41,8 +72,10 @@
             justify-content: center;
         }
         .gallery img {
-            width: 200px;
-            height: 150px;
+            /* width: 200px;
+            height: 150px; */
+            width: 30%;
+            height: 30%;
             margin: 10px;
             transition: transform 0.3s;
             cursor: pointer;
@@ -79,7 +112,7 @@
             padding: 0;
             width: 100%;
             height: 100vh;
-            background-image: url('imgs/bg.png'); /* Replace with your image */
+            background-image: url('imgs/bg.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -89,14 +122,19 @@
             color: white;
         }
         .header-content {
+            padding: 30px;
             background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
+            animation: fadeIn 3s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
         .all {
-            /* padding: 50px 0; */
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100vh; /* Full viewport height */
+            /* height: 100vh;  */
             opacity: 0;
             transform: translateY(50px);
             transition: all 1s ease;
@@ -110,20 +148,59 @@
             border-style: solid;
             border-color: rgb(5, 6, 92);
             border-width: 2px;
+            text-align: center;
+            margin: 0 auto;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
         }
         .aboutBG {
-            background-image: url('imgs/laptop.jpg'); /* Replace with the image URL */
+            background-image: url('imgs/laptop.jpg');
             background-size: cover; /* Ensures the image covers the entire div */
-            background-position: bottom; /* Centers the image */
-            background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-position: bottom;
+            background-repeat: no-repeat;
+            text-align: center;
+            color: white;
+            
+            /* border-style: solid;
+            border-color: red; */
+        }
+        .aboutTxt{
+            transform: translateY(-90px);
+        }
+        .companyBG {
+            background-image: url('imgs/building1.jpg');
+            background-size: cover; /* Ensures the image covers the entire div */
+            background-position: bottom;
+            background-repeat: no-repeat;
             text-align: center;
             color: white;
             /* border-style: solid;
             border-color: red; */
         }
+        .company-content {
+            /* padding: 30px; */
+            /* background-color: rgba(0, 0, 0, 0.5);  */
+            text-align: center;
+            margin: 0 auto;
+            /* display: flex;  */
+            justify-content: center; 
+            align-items: center;
+        }
+        .c1 {
+            opacity: 0;
+            transform: translateX(-300px);
+            transition: all 1s ease;
+        }
+        .c2 {
+            opacity: 0;
+            transform: translateX(300px);
+            transition: all 1s ease;
+        }
         .active {
             opacity: 1;
             transform: translateY(0);
+            transform: translateX(0);
         }
     </style>
 </head>
@@ -141,11 +218,11 @@
     </header>
 
     <!-- About Section -->
-    <section class="about aboutBG">
-        <h2>ABOUT</h2>
+    <section class="about aboutBG">        
         <div>
+            <h1 class="aboutTxt">ABOUT</h1>
             <br>
-            <pre class="" style="font-size: 13px;">
+            <pre class="aboutTxt" style="font-size: 13px;">
             I'm Noel Rico, but you can just call me Noel.<br>
         I am a web and mobile app developer. <br>
                                                     Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
@@ -161,56 +238,141 @@
     </section>
 
     <!-- Companies Section -->
-    <section class="all" id="companies">
-            <br>
-            <h2>Companies I've Worked For</h2>
-            <div class="">
-                <br>
-                <div class="" style="display: block">
-					<center>
-                        <img src="imgs/PGATECH-Logo.png" width="250px">
-                        <br><br>
-						<div class="">
-							<b>Upstart-Gorilla Geo Industries Inc.</b><br><br>
-							Currently working as a Senior Programmer. <br>
-                            PGATECH Group, a Filipino-owned engineering organization <br>
-                            that has endeavored to be at the forefront of specialty geoconstruction <br>
-                            and materials testing in the Philippines since 1981.
-						</div>						
-						<br><br>
-					</center>
-				</div> 
-				<div class="" style="display: block">
-					<center>
-                        <img src="imgs/632apps.png" width="100px">
-                        <br><br>
-						<div class="" >
-							<b>+632 Apps</b><br><br>
-							Worked as a regular Senior Programmer for 7 years. <br>
-                            +632 Apps is a Software and Mobile App Development Company <br>
-                            that focuses in creating solutions that promotes inventiveness.
-						</div>
-						<br><br>
-					</center>
-				</div>
+    <section class="all companyBG" id="companies">
+        <div class="company-content">
+            <br><br>
+            <h1>Companies I've Worked For</h1>
+            <br><br>
+            <div class="c1" style="display: block">
+                <center>
+                    <img src="imgs/PGATECH-Logo.png" width="250px" style="background-color: rgb(253, 253, 253, 0.6); padding:5px;">
+                    <br><br>
+                    <div class="">
+                        <h3>Upstart-Gorilla Geo Industries Inc.</h3>
+                        Currently working as a Senior Programmer. <br>
+                        Upstart-Gorilla Geo Industries Inc. is a subsidiary of the PGATECH Group, <br> 
+                        a Filipino-owned engineering organization <br>
+                        that has endeavored to be at the forefront of specialty geoconstruction <br>
+                        and materials testing in the Philippines since 1981.
+                    </div>						
+                    <br><br>
+                </center>
+            </div> 
+            <br><br><br>
+            <div class="c2" style="display: block">
+                <center>
+                    <img src="imgs/632apps.png" width="100px" style="background-color: rgb(253, 253, 253, 0.9); padding:5px;">
+                    <br>
+                    <div class="" >
+                        <h3>+632 Apps</h3>
+                        Worked as a regular Senior Programmer for 7 years. <br>
+                        +632 Apps is a Software and Mobile App Development Company <br>
+                        that focuses in creating solutions that promotes inventiveness.
+                    </div>
+                    <br><br>
+                </center>
             </div>
+        </div>
+        <br><br><br><br><br>
     </section>
 
     <!-- Projects Section -->
     <section class="all" id="projects">
+        <div class="projectBG"></div>
         <div class="container">
-            <h2>Projects</h2>
+            <h1 style="color: white;">Projects</h1>
+            <br><br>
             <div class="projects">
                 <!-- Project 1 -->
-                <div class="project" onclick="openGallery(1)">
-                    Project 1
+                 <div>
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/projs/stormaze/stormazelogo.png" class="" width="200px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <b><span style="font-size: 1.2em">StorMaze</span></b>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>         
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>                
+                    </div>
+                    <br><br>
+                    <!-- Project 2 -->
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/fosterfoodslogo.png" class="" width="100px">
+                        <b><span style="font-size: 1.2em">StorMaze</span></b>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>    
+                    </div>
+                    <br><br>
+                    <!-- Project 2 -->
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/fosterfoodslogo.png" class="" width="100px">
+                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>    
+                    </div>
+                    <br><br>
+                    <!-- Project 2 -->
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/fosterfoodslogo.png" class="" width="100px">
+                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>    
+                    </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="project" onclick="openGallery(2)">
-                    Project 2
+                <div>
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/fosterfoodslogo.png" class="" width="100px">
+                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>                    
+                    </div>
+                    <br><br>
+                    <!-- Project 2 -->
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/fosterfoodslogo.png" class="" width="100px">
+                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>    
+                    </div>
+                    <br><br>
+                    <!-- Project 2 -->
+                    <div class="project" onclick="openGallery(1)">
+                        <img src="imgs/fosterfoodslogo.png" class="" width="100px">
+                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <br><br>
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
+                        Basically, it is a reimbursement system <br>
+                        wherein the users will upload the image of the receipt of their expenses. <br>
+                        The accounting office will then validate and compute the total expenses of the user. <br>    
+                    </div>
                 </div>
                 <!-- Add more projects up to 10 -->
-
+<!-- 
                 <div class="col-12 p-4">
                     <div class="row justify-content-center">
                         <div class="col-10">
@@ -396,7 +558,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
             </div>
@@ -423,18 +585,18 @@
     </section>
 
     <!-- Image gallery modals -->
-    <div id="modal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
+    <div id="modal" class="modal" >
+        <span class="close" onclick="closeModal()">&times;</span>
         <img id="modalImg" src="">
     </div>
 
     <!-- JavaScript for animation and image gallery -->
     <script>
         // Animation on scroll
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('section, div.c1, div.c2');
 
         window.addEventListener('scroll', () => {
-            const triggerBottom = window.innerHeight / 1.3;
+            const triggerBottom = window.innerHeight / 1.8;
 
             sections.forEach(section => {
                 const sectionTop = section.getBoundingClientRect().top;
@@ -446,11 +608,40 @@
             });
         });
 
+        // const c1 = document.querySelectorAll('div.c1, div.c2');
+
+        // window.addEventListener('scroll', () => {
+        //     const triggerBottom = window.innerHeight / 1.8;
+
+        //     c1.forEach(div => {
+        //         const sectionT = div.getBoundingClientRect().top;
+        //         if(sectionT < triggerBottom) {
+        //             div.classList.add('active');
+        //         } else {
+        //             div.classList.remove('active');
+        //         }
+        //     });
+        // });
+
         // Image gallery and modal functionality
         const projectsImages = {
             1: [
-                'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg', 'img5.jpg',
-                'img6.jpg', 'img7.jpg', 'img8.jpg', 'img9.jpg', 'img10.jpg'
+                'imgs/projs/stormaze/web/0.jpg', 
+                'imgs/projs/stormaze/web/1.jpg',
+                'imgs/projs/stormaze/web/2.jpg',
+                'imgs/projs/stormaze/web/3.jpg',
+                'imgs/projs/stormaze/web/4.jpg',
+                'imgs/projs/stormaze/web/5.jpg',
+                'imgs/projs/stormaze/web/6.jpg',
+                'imgs/projs/stormaze/web/7.jpg',
+                // 'imgs/projs/stormaze/app/1.png',
+                // 'imgs/projs/stormaze/app/2.jpg',
+                // 'imgs/projs/stormaze/app/3.jpg',
+                // 'imgs/projs/stormaze/app/4.jpg',
+                // 'imgs/projs/stormaze/app/5.png',
+                // 'imgs/projs/stormaze/app/6.png',
+                // 'imgs/projs/stormaze/app/7.png',
+                // 'imgs/projs/stormaze/app/8.jpg',
             ],
             2: [
                 'img11.jpg', 'img12.jpg', 'img13.jpg', 'img14.jpg', 'img15.jpg',
@@ -463,11 +654,15 @@
             const modal = document.getElementById("modal");
             const modalImg = document.getElementById("modalImg");
             modal.style.display = "flex";
+            modalImg.style.width = "75%";
+            modalImg.style.margin = "10px";
             modalImg.src = projectsImages[projectId][0]; // Load first image of project
 
             // Zoom function on click
             const gallery = document.createElement('div');
             gallery.className = 'gallery';
+            // gallery.style.width = "25%";
+            // gallery.style.height = "25%";
             projectsImages[projectId].forEach(imgSrc => {
                 const img = document.createElement('img');
                 img.src = imgSrc;
@@ -481,6 +676,10 @@
 
         function closeModal() {
             document.getElementById("modal").style.display = "none";
+            const existingGallery = document.querySelector('.gallery');
+            if (existingGallery) {
+                existingGallery.remove();
+            }
         }
 
         window.onload = function() {
