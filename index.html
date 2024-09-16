@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<htl lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -596,7 +596,7 @@
         const sections = document.querySelectorAll('section, div.c1, div.c2');
 
         window.addEventListener('scroll', () => {
-            const triggerBottom = window.innerHeight / 1.8;
+            const triggerBottom = window.innerHeight / 1.5;
 
             sections.forEach(section => {
                 const sectionTop = section.getBoundingClientRect().top;
@@ -626,14 +626,14 @@
         // Image gallery and modal functionality
         const projectsImages = {
             1: [
-                'imgs/projs/stormaze/web/0.jpg', 
-                'imgs/projs/stormaze/web/1.jpg',
-                'imgs/projs/stormaze/web/2.jpg',
-                'imgs/projs/stormaze/web/3.jpg',
-                'imgs/projs/stormaze/web/4.jpg',
-                'imgs/projs/stormaze/web/5.jpg',
-                'imgs/projs/stormaze/web/6.jpg',
-                'imgs/projs/stormaze/web/7.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/0.jpg', 
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/1.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/2.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/3.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/4.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/5.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/6.jpg',
+                'https://noelricodev.github.io/imgs/projs/stormaze/web/7.jpg',
                 // 'imgs/projs/stormaze/app/1.png',
                 // 'imgs/projs/stormaze/app/2.jpg',
                 // 'imgs/projs/stormaze/app/3.jpg',
@@ -653,7 +653,8 @@
         function openGallery(projectId) {
             const modal = document.getElementById("modal");
             const modalImg = document.getElementById("modalImg");
-            modal.style.display = "flex";
+            // modal.style.display = "flex";
+            modal.style.display = "block";
             modalImg.style.width = "75%";
             modalImg.style.margin = "10px";
             modalImg.src = projectsImages[projectId][0]; // Load first image of project
