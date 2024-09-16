@@ -86,6 +86,8 @@
         /* Modal styles */
         .modal {
             display: none;
+            /* modal.style.display = "flex"; 
+            modal.style.display = "block"; */
             position: fixed;
             top: 0;
             left: 0;
@@ -98,6 +100,10 @@
         .modal img {
             max-width: 90%;
             max-height: 80%;
+        }
+        #modalImg{
+            width: 75%;
+            margin: 10px;
         }
         .close {
             position: absolute;
@@ -654,7 +660,7 @@
             const modal = document.getElementById("modal");
             const modalImg = document.getElementById("modalImg");
             // modal.style.display = "flex";
-            // modal.style.display = "block";
+            modal.style.display = "block";
             // modalImg.style.width = "75%";
             // modalImg.style.margin = "10px";
             modalImg.src = projectsImages[projectId][0]; // Load first image of project
