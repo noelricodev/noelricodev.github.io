@@ -99,10 +99,11 @@
         }
         .modal img {
             max-width: 90%;
-            max-height: 80%;
+            /* max-height: 80%; */
+            height: 80%;
         }
         #modalImg{
-            width: 75%;
+            /* width: 75%; */
             margin: 10px;
         }
         .close {
@@ -112,6 +113,46 @@
             font-size: 30px;
             color: white;
             cursor: pointer;
+        }
+        .next {
+            position: fixed;
+            top: 50%;
+            right: 5%;
+            z-index: 10;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+        }
+        .back {
+            position: fixed;
+            top: 50%;
+            left: 5%;
+            z-index: 10;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+        }
+        .rightClick{
+            right: 0%;
+            position:absolute;
+            z-index: 13;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0);
+            width: 50%;
+            height: 70vh;
+        }
+        .leftClick{
+            left: 0%;
+            position:absolute;
+            z-index: 13;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0);
+            width: 50%;
+            height: 70vh;
         }
         .header {
             margin: 0;
@@ -308,7 +349,7 @@
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/fosterfoodslogo.png" class="" width="100px">
-                        <b><span style="font-size: 1.2em">StorMaze</span></b>
+                        <b><span style="font-size: 1.2em">PSI</span></b>
                         <br><br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
@@ -320,7 +361,7 @@
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/fosterfoodslogo.png" class="" width="100px">
-                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <span style="font-size: 1.2em">PGA-DCM</span>
                         <br><br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
@@ -332,7 +373,7 @@
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/fosterfoodslogo.png" class="" width="100px">
-                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <span style="font-size: 1.2em">Exlog</span>
                         <br><br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
@@ -344,7 +385,7 @@
                 <div>
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/fosterfoodslogo.png" class="" width="100px">
-                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <span style="font-size: 1.2em">IDEM</span>
                         <br><br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
@@ -356,7 +397,7 @@
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/fosterfoodslogo.png" class="" width="100px">
-                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <span style="font-size: 1.2em">KPI</span>
                         <br><br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
@@ -368,7 +409,7 @@
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/fosterfoodslogo.png" class="" width="100px">
-                        <span style="font-size: 1.2em">Foster Foods Reimbursement System</span>
+                        <span style="font-size: 1.2em">Surelog</span>
                         <br><br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
@@ -573,13 +614,13 @@
         <!-- footer -->
         <div class="col-12 p-3 text-dark"></div>
 			<center>
-				<a href="https://www.facebook.com/jnmlqn" class="text-dark" target="_blank">
+				<!-- <a href="https://www.facebook.com/jnmlqn" class="text-dark" target="_blank">
 					<i class="fa fa-facebook"></i>
 				</a>
 				&nbsp;&nbsp;
 				<a href="https://www.linkedin.com/in/john-manuel-aquino-721852160/" class="text-dark" target="_blank">
 					<i class="fa fa-linkedin"></i>
-				</a>
+				</a> -->
 				<br>
 				<span class="subtitle">
 					<i class="fa fa-user"></i> Noel Leonor Rico | 
@@ -591,8 +632,14 @@
     </section>
 
     <!-- Image gallery modals -->
-    <div id="modal" class="modal" >
+    <div id="modal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
+        <div class="dnext rightClick" onclick="next()">
+            <span class="next" onclick="next()"><b>></b></span>
+        </div>
+        <div class="dback leftClick" onclick="back()">
+            <span class="back" onclick="back()"><b><</b></span>
+        </div>
         <img id="modalImg" src="">
     </div>
 
@@ -631,62 +678,128 @@
 
         // Image gallery and modal functionality
         const projectsImages = {
-            1: [
-                'imgs/0.JPG', 
-                'imgs/1.JPG',
-                'imgs/2.JPG',
-                'imgs/3.JPG',
-                'imgs/4.JPG',
-                'imgs/5.JPG',
-                'imgs/6.JPG',
-                'imgs/7.JPG',
-                // 'imgs/projs/stormaze/web/0.jpg', 
-                // 'imgs/projs/stormaze/web/1.jpg',
-                // 'imgs/projs/stormaze/web/2.jpg',
-                // 'imgs/projs/stormaze/web/3.jpg',
-                // 'imgs/projs/stormaze/web/4.jpg',
-                // 'imgs/projs/stormaze/web/5.jpg',
-                // 'imgs/projs/stormaze/web/6.jpg',
-                // 'imgs/projs/stormaze/web/7.jpg',
-                // 'imgs/projs/stormaze/app/1.png',
-                // 'imgs/projs/stormaze/app/2.jpg',
-                // 'imgs/projs/stormaze/app/3.jpg',
-                // 'imgs/projs/stormaze/app/4.jpg',
-                // 'imgs/projs/stormaze/app/5.png',
-                // 'imgs/projs/stormaze/app/6.png',
-                // 'imgs/projs/stormaze/app/7.png',
-                // 'imgs/projs/stormaze/app/8.jpg',
+            1: [	//stormaze
+                'imgs/projs/stormaze/web/0.jpg', 
+                'imgs/projs/stormaze/web/1.jpg',
+                'imgs/projs/stormaze/web/2.jpg',
+                'imgs/projs/stormaze/web/3.jpg',
+                'imgs/projs/stormaze/web/4.jpg',
+                'imgs/projs/stormaze/web/5.jpg',
+                'imgs/projs/stormaze/web/6.jpg',
+                'imgs/projs/stormaze/web/7.jpg',
+                'imgs/projs/stormaze/app/1.png',
+                'imgs/projs/stormaze/app/2.jpg',
+                'imgs/projs/stormaze/app/3.jpg',
+                'imgs/projs/stormaze/app/4.jpg',
+                'imgs/projs/stormaze/app/5.png',
+                'imgs/projs/stormaze/app/6.png',
+                'imgs/projs/stormaze/app/7.png',
+                'imgs/projs/stormaze/app/8.jpg',
             ],
-            2: [
-                'img11.jpg', 'img12.jpg', 'img13.jpg', 'img14.jpg', 'img15.jpg',
-                'img16.jpg', 'img17.jpg', 'img18.jpg', 'img19.jpg', 'img20.jpg'
+            2: [	//PSI
+                'imgs/projs/psi/1.jpg',
+                'imgs/projs/psi/2.jpg',
+                'imgs/projs/psi/3.jpg',
+                'imgs/projs/psi/4.jpg',
+                'imgs/projs/psi/5.jpg',
+                'imgs/projs/psi/6.jpg',
             ],
-            // Add more images for up to 10 projects
+            3: [	//PGA-DCM
+                'imgs/projs/dcm/1.jpg',
+                'imgs/projs/dcm/2.jpg',
+                'imgs/projs/dcm/3.jpg',
+                'imgs/projs/dcm/4.jpg',
+                'imgs/projs/dcm/5.jpg',
+                'imgs/projs/dcm/6.jpg',
+            ],
+	        4: [	//Exlog
+                'imgs/projs/exlog/1.jpg',
+                'imgs/projs/exlog/2.jpg',
+                'imgs/projs/exlog/3.jpg',
+                'imgs/projs/exlog/4.jpg',
+                'imgs/projs/exlog/5.jpg',
+                'imgs/projs/exlog/6.jpg',
+                'imgs/projs/exlog/7.jpg',
+                'imgs/projs/exlog/8.jpg',
+                'imgs/projs/exlog/9.jpg',
+                'imgs/projs/exlog/10.jpg',
+            ],
+	        5: [	//IDEM
+                'imgs/projs/idem/1.jpg',
+                'imgs/projs/idem/2.jpg',
+                'imgs/projs/idem/3.jpg',
+                'imgs/projs/idem/4.jpg',
+                'imgs/projs/idem/5.jpg',
+                'imgs/projs/idem/6.jpg',
+                'imgs/projs/idem/7.jpg',
+                'imgs/projs/idem/8.jpg',
+            ],
+	        6: [	//KPI
+                'imgs/projs/kpi/1.jpg',
+                'imgs/projs/kpi/2.jpg',
+                'imgs/projs/kpi/3.jpg',
+                'imgs/projs/kpi/4.jpg',
+                'imgs/projs/kpi/5.jpg',
+                'imgs/projs/kpi/6.jpg',
+                'imgs/projs/kpi/7.jpg',
+                'imgs/projs/kpi/8.jpg',
+            ],
+            7: [	//Surelog
+                'imgs/projs/surelog/1.jpg',
+                'imgs/projs/surelog/2.jpg',
+                'imgs/projs/surelog/3.jpg',
+                'imgs/projs/surelog/4.jpg',
+                'imgs/projs/surelog/5.jpg',
+                'imgs/projs/surelog/6.jpg',
+                'imgs/projs/surelog/7.jpg',
+                'imgs/projs/surelog/8.jpg',
+                'imgs/projs/surelog/9.jpg',
+            ],
         };
+
+        const imageLength = [0,15,5,9,9,7,7,8];
+        selectedGallery = 0;
+        const modalImg = document.getElementById("modalImg");
+        currentImg = 0;
 
         function openGallery(projectId) {
             const modal = document.getElementById("modal");
-            const modalImg = document.getElementById("modalImg");
-            // modal.style.display = "flex";
-            modal.style.display = "block";
+            modal.style.display = "flex";
+            selectedGallery = projectId;
+            currentImg = 0;
+            // modal.style.display = "block";
             // modalImg.style.width = "75%";
             // modalImg.style.margin = "10px";
-            modalImg.src = projectsImages[projectId][0]; // Load first image of project
+
+            // Load first image of project
+            modalImg.src = projectsImages[projectId][0];
 
             // Zoom function on click
-            const gallery = document.createElement('div');
-            gallery.className = 'gallery';
-            // gallery.style.width = "25%";
-            // gallery.style.height = "25%";
-            projectsImages[projectId].forEach(imgSrc => {
-                const img = document.createElement('img');
-                img.src = imgSrc;
-                img.onclick = () => {
-                    modalImg.src = imgSrc; // Set clicked image to modal
-                };
-                gallery.appendChild(img);
-            });
-            modal.appendChild(gallery);
+            // const gallery = document.createElement('div');
+            // gallery.className = 'gallery';
+            // projectsImages[projectId].forEach(imgSrc => {
+            //     const img = document.createElement('img');
+            //     img.src = imgSrc;
+            //     img.onclick = () => {
+            //         modalImg.src = imgSrc; // Set clicked image to modal
+            //     };
+            //     gallery.appendChild(img);
+            // });
+            // modal.appendChild(gallery);
+        }
+
+        function next(){
+            currentImg++;
+            mylength = imageLength[selectedGallery];
+            if(currentImg > mylength ){ currentImg = 0; }
+            modalImg.src = projectsImages[selectedGallery][currentImg];
+        }
+
+        function back(){
+            currentImg--;
+            mylength = imageLength[selectedGallery];
+            if(currentImg < 0 ){ currentImg = mylength; }
+            modalImg.src = projectsImages[selectedGallery][currentImg];
         }
 
         function closeModal() {
