@@ -34,12 +34,23 @@
         }
         .project {
             width: 90%;
-            padding: 20px;
+            /* padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
             border-radius: 5px;
             text-align: center;
+            cursor: pointer; */
+
+            /* display: inline-block; */
+            padding: 10px 20px;
+            background-color: #033953;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
+            border: none;
+            box-shadow: 4px 4px #00000057;
         }
         .projects {
             display: flex;
@@ -55,8 +66,9 @@
             z-index: -10;
             position:absolute;
             width: 100%;
-            height: 180vh;
-            background: linear-gradient(to bottom, #010c19, #0a2a70);
+            /* height: 180vh; */
+            height: 98%;
+            background: linear-gradient(to bottom, #021630, #0a2f80);
             /* background-image: url('imgs/matrix.jpg');
             background-size: cover; 
             background-position: bottom;
@@ -110,7 +122,7 @@
             position: absolute;
             top: 20px;
             right: 30px;
-            font-size: 30px;
+            font-size: 50px;
             color: white;
             cursor: pointer;
         }
@@ -240,6 +252,7 @@
             transition: all 1s ease;
         }
         .c2 {
+            display: block;
             opacity: 0;
             transform: translateX(300px);
             transition: all 1s ease;
@@ -330,7 +343,6 @@
             <h1 style="color: white;">Projects</h1>
             <br><br>
             <div class="projects">
-                <!-- Project 1 -->
                  <div>
                     <div class="project" onclick="openGallery(1)">
                         <img src="imgs/projs/stormaze/stormazelogo.png" class="" width="200px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
@@ -346,44 +358,41 @@
                         the list of maps, list of stores and adjustment on ads. <br>
                     </div>
                     <br><br>
-                    <!-- Project 2 -->
                     <div class="project" onclick="openGallery(2)">
                         <img src="imgs/projs/psi/favicon.ico" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">PSI</span></b>
-                        <br><br>
+                        <br><br>                        
+                        It is an overall system from receiving job orders, <br>
+                        to filling up forms of test orders, <br>
+                        auto computation with engineering standards of different testings, <br>
+                        releasing test printouts from diffirent departments, <br>
+                        and auto computation for all test involved of their expenses. <br>
                         Developed using Laravel Framework with Javascript, <br>
                         JQuery and CSS for the web app. <br>
-                        Basically, it is a reimbursement system wherein the users<br>
-                        will upload the image of the receipt of their expenses. <br>
-                        The accounting office will then validate <br>
-                        and compute the total expenses of the user.
                     </div>
                     <br><br>
-                    <!-- Project 2 -->
                     <div class="project" onclick="openGallery(3)">
                         <img src="imgs/projs/dcm/pgadcmlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">DCM</span></b>
                         <br><br>
-                        Developed a multi purpose web application. <br>
                         This system includes inventory management, tasks management, <br> 
                         equipment borrowing and maintenance and a real time chat. <br>
                         The objective of this system <br> 
-                        is to make a paperless transactions for each companies. <br>
+                        is to make a paperless transactions for the company. <br>
                         This web application was developed using Laravel framework <br>
                         and Ionic framework for the mobile application.
                         
                     </div>
                     <br><br>
-                    <!-- Project 2 -->
                     <div class="project" onclick="openGallery(4)">
                         <img src="imgs/projs/exlog/Logo with text.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">Exlog</span></b>
                         <br><br>
-                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
-                        for the web app and Ionic Framework for the mobile application. <br>
                         Basically, it is a reimbursement system <br>
                         wherein the users will upload the image of the receipt of their expenses. <br>
                         The accounting office will then validate and compute the total expenses of the user. <br>    
+                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        for the web app and Ionic Framework for the mobile application. <br>
                     </div>
                 </div>
                 <div>
@@ -411,11 +420,12 @@
                         <img src="imgs/projs/kpi/geogreenlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">KPI</span></b>
                         <br><br>
+                        Basically, it is a employees performance system <br>
+                        wherein the users will be ranked to easily see <br>
+                        like their attendance, sales, customer satisfaction and others performances <br>
+                        that will evaluate their monthly and yearly performance. <br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
-                        Basically, it is a reimbursement system <br>
-                        wherein the users will upload the image of the receipt of their expenses. <br>
-                        The accounting office will then validate and compute the total expenses of the user. <br>    
                     </div>
                     <br><br>
                     <!-- Project 2 -->
@@ -484,145 +494,7 @@
                         </div>
                     </div>
                 </div>
-        
-                <div class="col-12 p-4">
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row mb-3">
-                                <div class="col-sm-8 aos-init" data-aos-duration="1000" data-aos="fade-right">
-                                    <img src="imgs/geogreenlogo.png" class="d-block d-lg-inline mr-4" width="100px">
-                                    <span class="subtitle">
-                                        <span style="font-size: 1.2em">Philippine Geogreen Inventory System</span>
-                                        <br><br>
-                                        Developed an inventory system for Philippine Geogreen to keep track of their current product stocks. This system includes order reservation and delivery receipts generation. It can also handles item return and replace. The system can generate an excel ready reports. This system was developed using Laravel Framework.
-                                        <br>
-                                        <span id="geogreenweb" class="pointer text-primary">View Web App Gallery</span>
-                                    </span>
-                                    <br><br>
-                                </div>
-                                <div class="col-sm-4 aos-init" data-aos-duration="1000" data-aos="fade-left">
-                                    <img src="imgs/geogreen.png" width="100%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 p-4 text-dust bg-black">
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row mb-3">
-                                <div class="col-sm-8 aos-init" data-aos-duration="1000" data-aos="fade-right">
-                                    <img src="imgs/idemlogo.png" class="d-block d-lg-inline mr-4" height="70px">
-                                    <span class="subtitle">
-                                        <span style="font-size: 1.2em">IDEM (Infectious Disease Exposure Map)</span>
-                                        <br><br>
-                                        When the COVID-19 reaches the Philippines, my previous team decided to develop a contact tracing app. The objectives of this app are to make the contact tracing more easier and avoid physical contact when using a paper and a pen from the establishments that can possibly cause a virus transmission. The users will just declare all of the signs and symptoms they are currently experiencing then the app will rate the user based on the signs and symptoms they have selected, the ratings are also based on DOH data. The app also have a QR code, this will scan the unique QR code provided to the establishments they are visiting. The app was made using Laravel Framework for the API and Ionic Framework with Angular for the mobile app.
-                                        <br>
-                                        <a href="http://idem.632apps.com/" target="_blank">Visit site</a>
-                                    </span>
-                                    <br><br>
-                                </div>
-                                <div class="col-sm-4 aos-init" data-aos-duration="1000" data-aos="fade-left">
-                                    <img src="imgs/idem.png" width="100%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 p-4">
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row mb-3">
-                                <div class="col-sm-8 aos-init" data-aos-duration="1000" data-aos="fade-right">
-                                    <img src="imgs/artcavelogo1.png" class="d-block d-lg-inline mr-4" height="70px">
-                                    <span class="subtitle">
-                                        <span style="font-size: 1.2em">Artcave Cafe &amp; Gallery</span>
-                                        <br><br>
-                                        As a freelancer, I have developed a website for a small cafe. The website was made using Laravel Framework, CSS and Javascript.
-                                        <br>
-                                        <a href="https://artcavegallery.com/" target="_blank">Visit site</a>
-                                    </span>
-                                    <br><br>
-                                </div>
-                                <div class="col-sm-4 aos-init" data-aos-duration="1000" data-aos="fade-left">
-                                    <img src="imgs/artcave.png" width="100%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 p-4 text-dust bg-black">
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row mb-3">
-                                <div class="col-sm-8 aos-init" data-aos-duration="1000" data-aos="fade-right">
-                                    <img src="imgs/pgadcmlogo.png" class="d-block d-lg-inline mr-4" height="70px">
-                                    <span class="subtitle">
-                                        <span style="font-size: 1.2em">PGA-DCM (Documented Communication Module)</span>
-                                        <br><br>
-                                        Developed a multi purpose web application for PGA group of companies. This system includes inventory management, tasks management, equipment borrowing and maintenance and a real time chat. The objective of this system is to make a paperless transactions for each companies. This web application was developed using Laravel framework and Ionic framework for the mobile application.
-                                        <br>
-                                        <span id="pgadcmweb" class="pointer text-primary">View Web App Gallery</span><br>
-                                        <span id="pgadcmmobile" class="pointer text-primary">View Mobile App Gallery</span>
-                                    </span>
-                                    <br><br>
-                                </div>
-                                <div class="col-sm-4 aos-init" data-aos-duration="1000" data-aos="fade-left">
-                                    <img src="imgs/pgadcm.png" width="100%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 p-4">
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row mb-3">
-                                <div class="col-sm-8 aos-init" data-aos-duration="1000" data-aos="fade-right">
-                                    <img src="imgs/gmovieslogo.png" class="d-block d-lg-inline mr-4" height="70px">
-                                    <span class="subtitle">
-                                        <span style="font-size: 1.2em">GMovies</span>
-                                        <br><br>
-                                        As a Software Engineer at Yondu, Inc., I become part of the backend team that develops reusable APIs for the GMovies web and mobile application using Laravel/Lumen Framework. GMovies is a platform that provides cinema movies and 3rd party online video streaming services.
-                                        <br>
-                                        <a href="https://gmovies.ph/" target="_blank">Visit site</a>
-                                    </span>
-                                    <br><br>
-                                </div>
-                                <div class="col-sm-4 aos-init" data-aos-duration="1000" data-aos="fade-left">
-                                    <img src="imgs/gmovies.png" width="100%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="col-12 p-4 bg-black">
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row mb-3">
-                                <div class="col-sm-8 aos-init" data-aos-duration="1000" data-aos="fade-right">
-                                    <img src="imgs/optimylogo.png" class="d-block d-lg-inline mr-4" height="70px">
-                                    <span class="subtitle">
-                                        <span style="font-size: 1.2em">Optimy</span>
-                                        <br><br>
-                                        As a Software Engineer at Eastvantage, I am working for our client in Belgium, Optimy. It is a software company that provides an all-in-one social impact platform. I am assigned to develop new features, frontend and backend, fixing existing feature bugs, provide support to our clients, refactor and optimize legacy codes to improve performance.
-                                        <br>
-                                        <a href="https://www.optimy.com/" target="_blank">Visit site</a>
-                                    </span>
-                                    <br><br>
-                                </div>
-                                <div class="col-sm-4 aos-init" data-aos-duration="1000" data-aos="fade-left">
-                                    <img src="imgs/optimy.gif" width="100%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+            -->
 
 
             </div>
@@ -760,7 +632,6 @@
                 'imgs/projs/kpi/4.png',
                 'imgs/projs/kpi/5.png',
                 'imgs/projs/kpi/6.png',
-                'imgs/projs/kpi/7.png',
             ],
             7: [	//Surelog
                 'imgs/projs/surelog/1.jpg',
@@ -775,7 +646,7 @@
             ],
         };
 
-        const imageLength = [0,15,5,7,9,7,6,8];
+        const imageLength = [0,15,5,7,9,7,5,8];
         selectedGallery = 0;
         const modalImg = document.getElementById("modalImg");
         currentImg = 0;
