@@ -46,7 +46,8 @@
             cursor: pointer; */
 
             /* display: inline-block; */
-            padding: 10px 20px;
+            /* padding: 10px 20px; */
+            /* padding: 10px; */
             background-color: #033953;
             color: white;
             text-align: center;
@@ -80,6 +81,9 @@
             color: white; */
             /* border-style: solid;
             border-color: red; */
+        }
+        .projDiv{
+            max-width: 100%;
         }
         /* Image gallery */
         .gallery {
@@ -228,8 +232,14 @@
             /* border-style: solid;
             border-color: red; */
         }
+        .aboutTxtH{
+            transform: translateY(-20px);
+            text-align: center;
+        }
         .aboutTxt{
-            transform: translateY(-90px);
+            transform: translateY(-70px);
+            text-align: justify;
+            padding: 50px;
         }
         .companyBG {
             background-image: url('imgs/building1.jpg');
@@ -249,6 +259,13 @@
             /* display: flex;  */
             justify-content: center; 
             align-items: center;
+            padding: 50px;
+        }
+        .just{
+            margin-left: auto;          /* Center the block horizontally */
+            margin-right: auto;         /* Center the block horizontally */
+            width: 90%;
+            text-align: justify;
         }
         .c1 {
             opacity: 0;
@@ -265,6 +282,31 @@
             opacity: 1;
             transform: translateY(0);
             transform: translateX(0);
+        }
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .companies, .projects {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+                align-items: center;
+            }
+            .company, .project {
+                width: 80%; /* Make company/project cards take up more space */
+                margin-bottom: 20px; /* Add spacing between the items */
+            }
+            .gallery img {
+                width: 45%; /* Make images larger for mobile view */
+                height: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company, .project {
+                width: 100%; /* Full width for smaller devices */
+            }
+            .gallery img {
+                width: 100px; /* Smaller images on mobile */
+                height: 100px;
+            }
         }
     </style>
 </head>
@@ -284,19 +326,19 @@
     <!-- About Section -->
     <section class="about aboutBG">        
         <div>
-            <h1 class="aboutTxt">ABOUT</h1>
-            <br>
+            <h1 class="aboutTxtH">ABOUT</h1>
+            <!-- <br> -->
             <pre class="aboutTxt" style="font-size: 13px;">
-            I'm Noel Rico, but you can just call me Noel.<br>
-        I am a web and mobile app developer. <br>
-                                                    Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
-                                    I have been working for almost 8 years in the IT industry. <br>
-                                        I handled and performed different roles such as web designer,<br>
-                                        front-end and back-end developer for mobile app and web app <br>
-                        and also game developer for local clients.<br> 
-                                                        I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, <br>
-                        Javascript, Jquery, Angular and MySQL.<br> 
-                                                        I also have basic knowledge in React JS, Typescript and SQL Server.
+                                                I'm Noel Rico, but you can just call me Noel.<br>
+                                                  I am a web and mobile app developer. <br>
+                                                   Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
+                                                     I have been working for almost 8 years in the IT industry. <br>
+                                                      I handled and performed different roles such as web designer,<br>
+                                                       front-end and back-end developer for mobile app and web app <br>
+                                                        and also game developer for local clients.<br> 
+                                                         I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, <br>
+                                                          Javascript, Jquery, Angular and MySQL.<br> 
+                                                           I also have basic knowledge in React JS, Typescript and SQL Server.
             </pre>
         </div>
     </section>
@@ -347,64 +389,105 @@
             <h1 style="color: white;">Projects</h1>
             <br><br>
             <div class="projects">
-                 <div>
+                <div class="projDiv">
                     <div class="project" onclick="openGallery(1)">
+                        <br>
                         <img src="imgs/projs/stormaze/stormazelogo.png" class="" width="200px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">StorMaze</span></b>
-                        <br><br>
-                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        <br>
+                        <p class="just">
+                            Developed using Laravel Framework with Javascript, JQuery and CSS
+                            for the web app and Ionic Framework for the mobile application.
+                            It helps the user to easily find the item inside the shop
+                            by giving routes on the map. It can also save items
+                            to easily send it to map with routes one by one.
+                            You can also browse recipes and save that items to send it to the map.
+                            On the server, it has all the control of the location of items on the map,
+                            the list of maps, list of stores and adjustment on ads.
+                        </p>
+                        <!-- Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
                         It helps the user to easily find the item inside the shop <br>
                         by giving routes on the map. It can also save items <br>
                         to easily send it to map with routes one by one. <br>
                         You can also browse recipes and save that items to send it to the map. <br>
                         On the server, it has all the control of the location of items on the map, <br>
-                        the list of maps, list of stores and adjustment on ads. <br>
+                        the list of maps, list of stores and adjustment on ads. <br> -->
                     </div>
                     <br><br>
                     <div class="project" onclick="openGallery(2)">
+                        <br>
                         <img src="imgs/projs/psi/favicon.ico" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">PSI</span></b>
-                        <br><br>                        
-                        It is an overall system from receiving job orders, <br>
+                        <br>
+                        <!-- It is an overall system from receiving job orders, <br>
                         to filling up forms of test orders, <br>
                         auto computation with engineering standards of different testings, <br>
                         releasing test printouts from diffirent departments, <br>
                         and auto computation for all test involved of their expenses. <br>
                         Developed using Laravel Framework with Javascript, <br>
-                        JQuery and CSS for the web app. <br>
+                        JQuery and CSS for the web app. <br> -->
+                        <p class="just">
+                            It is an overall system from receiving job orders,
+                            to filling up forms of test orders,
+                            auto computation with engineering standards of different testings,
+                            releasing test printouts from diffirent departments, 
+                            and auto computation for all test involved of their expenses. 
+                            Developed using Laravel Framework with Javascript, 
+                            JQuery and CSS for the web app.
+                        </p>
                     </div>
                     <br><br>
                     <div class="project" onclick="openGallery(3)">
+                        <br>
                         <img src="imgs/projs/dcm/pgadcmlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">DCM</span></b>
-                        <br><br>
-                        This system includes inventory management, tasks management, <br> 
+                        <br>
+                        <!-- This system includes inventory management, tasks management, <br> 
                         equipment borrowing and maintenance and a real time chat. <br>
                         The objective of this system <br> 
                         is to make a paperless transactions for the company. <br>
                         This web application was developed using Laravel framework <br>
-                        and Ionic framework for the mobile application.
-                        
+                        and Ionic framework for the mobile application. -->
+                        <p class="just">
+                            It is an overall system from receiving job orders,
+                            to filling up forms of test orders,
+                            auto computation with engineering standards of different testings,
+                            releasing test printouts from diffirent departments, 
+                            and auto computation for all test involved of their expenses. 
+                            Developed using Laravel Framework with Javascript, 
+                            JQuery and CSS for the web app.
+                        </p>
                     </div>
                     <br><br>
                     <div class="project" onclick="openGallery(4)">
+                        <br>
                         <img src="imgs/projs/exlog/Logo with text.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">Exlog</span></b>
-                        <br><br>
-                        Basically, it is a reimbursement system <br>
+                        <br>
+                        <!-- Basically, it is a reimbursement system <br>
                         wherein the users will upload the image of the receipt of their expenses. <br>
                         The accounting office will then validate and compute the total expenses of the user. <br>    
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
-                        for the web app and Ionic Framework for the mobile application. <br>
+                        for the web app and Ionic Framework for the mobile application. <br> -->
+                        <p class="just">
+                            It is an overall system from receiving job orders,
+                            to filling up forms of test orders,
+                            auto computation with engineering standards of different testings,
+                            releasing test printouts from diffirent departments, 
+                            and auto computation for all test involved of their expenses. 
+                            Developed using Laravel Framework with Javascript, 
+                            JQuery and CSS for the web app.
+                        </p>
                     </div>
                 </div>
-                <div>
+                <div class="projDiv">
                     <div class="project" onclick="openGallery(5)">
+                        <br>
                         <img src="imgs/projs/idem/idemlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">IDEM</span></b>
-                        <br><br>
-                        The objectives of this app are to make <br>
+                        <br>
+                        <!-- The objectives of this app are to make <br>
                         the contact tracing more easier and avoid physical contact <br>
                         when using a paper and a pen from the establishments <br>
                         that can possibly cause a virus transmission. <br>
@@ -416,28 +499,48 @@
                         this will scan the unique QR code <br>
                         provided to the establishments they are visiting. <br>
                         The app was made using Laravel Framework for the API <br>
-                        and Ionic Framework with Angular for the mobile app. <br>                    
+                        and Ionic Framework with Angular for the mobile app. <br>        -->
+                        <p class="just">
+                            It is an overall system from receiving job orders,
+                            to filling up forms of test orders,
+                            auto computation with engineering standards of different testings,
+                            releasing test printouts from diffirent departments, 
+                            and auto computation for all test involved of their expenses. 
+                            Developed using Laravel Framework with Javascript, 
+                            JQuery and CSS for the web app.
+                        </p>             
                     </div>
                     <br><br>
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(6)">
+                        <br>
                         <img src="imgs/projs/kpi/geogreenlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">KPI</span></b>
-                        <br><br>
-                        Basically, it is a employees performance system <br>
+                        <br>
+                        <!-- Basically, it is a employees performance system <br>
                         wherein the users will be ranked to easily see <br>
                         like their attendance, sales, customer satisfaction and others performances <br>
                         that will evaluate their monthly and yearly performance. <br>
                         Developed using Laravel Framework with Javascript, JQuery and CSS <br>
-                        for the web app and Ionic Framework for the mobile application. <br>
+                        for the web app and Ionic Framework for the mobile application. <br> -->
+                        <p class="just">
+                            It is an overall system from receiving job orders,
+                            to filling up forms of test orders,
+                            auto computation with engineering standards of different testings,
+                            releasing test printouts from diffirent departments, 
+                            and auto computation for all test involved of their expenses. 
+                            Developed using Laravel Framework with Javascript, 
+                            JQuery and CSS for the web app.
+                        </p>
                     </div>
                     <br><br>
                     <!-- Project 2 -->
                     <div class="project" onclick="openGallery(7)">
+                        <br>
                         <img src="imgs/projs/surelog/surelogLOGO.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">Surelog</span></b>
-                        <br><br>
-                        Developed using Laravel Framework with Javascript, JQuery and CSS <br>
+                        <br>
+                        <!-- Developed using Laravel Framework with Javascript, JQuery and CSS <br>
                         for the web app and Ionic Framework for the mobile application. <br>
                         An attendance system for site engineers. Using the mobile app, <br>
                         they will capture an image of the project site. <br>
@@ -446,7 +549,16 @@
                         The collected data will be sent to the office for payroll computation. <br>
                         The payroll computation will be done in the web app. <br>
                         The lates and absences are automatically computed. <br>
-                        The final report can be exported as an excel file.
+                        The final report can be exported as an excel file. -->
+                        <p class="just">
+                            It is an overall system from receiving job orders,
+                            to filling up forms of test orders,
+                            auto computation with engineering standards of different testings,
+                            releasing test printouts from diffirent departments, 
+                            and auto computation for all test involved of their expenses. 
+                            Developed using Laravel Framework with Javascript, 
+                            JQuery and CSS for the web app.
+                        </p>
                     </div>
                 </div>
                 <!-- Add more projects up to 10 -->
@@ -708,6 +820,27 @@
             script.src = "external-script.js";
             document.body.appendChild(script);
         };
+
+        if (window.innerWidth <= 768) {
+            // Mobile screen
+            document.querySelectorAll('pre').forEach(preTag => {
+                // Create a new <p> tag
+                const pTag = document.createElement('p');
+                
+                // Copy the text content from the <pre> tag
+                pTag.textContent = preTag.textContent;
+                
+                // Apply a class to center the text (optional)
+                pTag.classList.add('aboutTxt');
+                
+                // Replace the <pre> tag with the new <p> tag
+                preTag.replaceWith(pTag);
+            });
+            console.log("Mobile device");
+        } else {
+            // Desktop screen
+            console.log("Desktop device");
+        }
     </script>
 
 </body>
