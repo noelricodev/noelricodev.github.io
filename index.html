@@ -3,298 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://noelricodev.github.io/imgs/icon.png">
+    <link href="css/web.css" rel="stylesheet" type="text/css" media="all">
     <title>Portfolio</title>
-    <style>
-        html *{
-            font-family:monospace;
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-        /* Basic styles */
-        body {
-            max-width: 100%;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        
-        .companies{
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-        }
-        .company {
-            width: 45%;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            text-align: center;
-        }
-        .project {
-            width: 90%;
-            /* background-color: #033953; */
-            /* background-color: #45A29E; */
-            /* background-color: #1f2833; */
-            background-color: #124e66;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            border: none;
-            box-shadow: 4px 4px #00000057;
-        }
-        .projects {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .projectBG {
-            z-index: -10;
-            position:absolute;
-            width: 100%;
-            height: 98%;
-            /* background: linear-gradient(to bottom, #021630, #0a2f80); */
-            /* background: linear-gradient(to bottom, #1F2833, #14161800); */
-            background: linear-gradient(to bottom, #212a31, #2e3944);
-        }
-        .projDiv{
-            width: 100%;
-        }
-        /* Image gallery */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .gallery img {
-            width: 30%;
-            height: 30%;
-            margin: 10px;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal img {
-            max-height: 80%;
-        }
-        #modalImg{
-            margin: 10px;
-        }
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-        }
-        .next {
-            position: fixed;
-            top: 50%;
-            right: 5%;
-            z-index: 10;
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 5px;
-        }
-        .back {
-            position: fixed;
-            top: 50%;
-            left: 5%;
-            z-index: 10;
-            font-size: 50px;
-            color: white;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 5px;
-        }
-        .rightClick{
-            right: 0%;
-            position:absolute;
-            z-index: 13;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0);
-            width: 50%;
-            height: 70vh;
-        }
-        .leftClick{
-            left: 0%;
-            position:absolute;
-            z-index: 13;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0);
-            width: 50%;
-            height: 70vh;
-        }
-        .header {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100vh;
-            background-image: url('imgs/frontBG.jfif');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        .header-content {
-            transform: translateY(-60px);
-            padding: 30px;
-            margin: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for better text visibility */
-            animation: fadeIn 3s;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        .all {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            /* height: 100vh;  */
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .about {
-            width: 99.7%;
-            height: 100vh;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 1s ease;
-            border-style: solid;
-            border-color: rgb(5, 6, 92);
-            border-width: 2px;
-            text-align: center;
-            margin: 0 auto;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-        }
-        .aboutBG {
-            background-image: url('imgs/laptop.jpg');
-            background-size: cover; /* Ensures the image covers the entire div */
-            background-position: bottom;
-            background-repeat: no-repeat;
-            text-align: center;
-            color: white;
-            
-            /* border-style: solid;
-            border-color: red; */
-        }
-        .aboutTxtH{
-            transform: translateY(-20px);
-            text-align: center;
-        }
-        .aboutTxt{
-            transform: translateY(-70px);
-            text-align: justify;
-            padding: 50px;
-        }
-        .companyBG {
-            background-image: url('imgs/building1.jpg');
-            background-size: cover; /* Ensures the image covers the entire div */
-            background-position: bottom;
-            background-repeat: no-repeat;
-            text-align: center;
-            color: white;
-            /* border-style: solid;
-            border-color: red; */
-        }
-        .company-content {
-            /* padding: 30px; */
-            /* background-color: rgba(0, 0, 0, 0.5);  */
-            text-align: center;
-            margin: 0 auto;
-            /* display: flex;  */
-            justify-content: center; 
-            align-items: center;
-            padding: 50px;
-        }
-        .just{
-            margin-left: auto;          /* Center the block horizontally */
-            margin-right: auto;         /* Center the block horizontally */
-            width: 90%;
-            text-align: justify;
-        }
-        .c1 {
-            opacity: 0;
-            transform: translateX(-300px);
-            transition: all 1s ease;
-        }
-        .c2 {
-            display: block;
-            opacity: 0;
-            transform: translateX(300px);
-            transition: all 1s ease;
-        }
-        .active {
-            opacity: 1;
-            transform: translateY(0);
-            transform: translateX(0);
-        }
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .companies, .projects {
-                flex-direction: column; /* Stack items vertically on smaller screens */
-                align-items: center;
-            }
-            .company, .project {
-                width: 80%; /* Make company/project cards take up more space */
-                margin-bottom: 20px; /* Add spacing between the items */
-            }
-            .gallery img {
-                width: 45%; /* Make images larger for mobile view */
-                height: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .company, .project {
-                width: 100%; /* Full width for smaller devices */
-            }
-            .gallery img {
-                width: 100px; /* Smaller images on mobile */
-                height: 100px;
-            }
-        }
-    </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <h2>Hi, I'm <b>Noel</b>.</h2>
@@ -305,11 +18,9 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section class="about aboutBG">        
         <div>
             <h1 class="aboutTxtH">ABOUT</h1>
-            <!-- <br> -->
             <pre class="aboutTxt" style="font-size: 13px;">
                                                 I'm Noel Rico, but you can just call me Noel.<br>
                                                   I am a web and mobile app developer. <br>
@@ -325,7 +36,6 @@
         </div>
     </section>
 
-    <!-- Companies Section -->
     <section class="all companyBG" id="companies">
         <div class="company-content">
             <br><br>
@@ -364,7 +74,6 @@
         <br><br><br><br><br>
     </section>
 
-    <!-- Projects Section -->
     <section class="all" id="projects">
         <div class="projectBG"></div>
         <div class="container">
@@ -461,7 +170,6 @@
                         <br>
                     </div>
                     <br><br>
-                    <!-- Project 2 -->
                     <div class="project" onclick="openGallery(6)">
                         <br>
                         <img src="imgs/projs/kpi/geogreenlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
@@ -478,7 +186,6 @@
                         <br>
                     </div>
                     <br><br>
-                    <!-- Project 2 -->
                     <div class="project" onclick="openGallery(7)">
                         <br>
                         <img src="imgs/projs/surelog/surelogLOGO.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
@@ -502,12 +209,9 @@
             </div>
         </div>
 
-        <!-- footer -->
+
         <div class="col-12 p-3 text-dark"></div>
 			<center>
-				<!-- <a href="https://www.facebook.com/noelrico" class="text-dark" target="_blank">
-					<i class="fa fa-facebook"></i>
-				</a> -->
 				<br>
 				<span class="subtitle">
 					<i class="fa fa-user"></i> Noel Leonor Rico | 
@@ -518,7 +222,7 @@
 		</div>
     </section>
 
-    <!-- Image gallery modals -->
+
     <div id="modal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <div class="dnext rightClick" onclick="next()">
@@ -530,162 +234,6 @@
         <img id="modalImg" src="">
     </div>
 
-    <!-- JavaScript for animation and image gallery -->
-    <script>
-        // Animation on scroll
-        const sections = document.querySelectorAll('section, div.c1, div.c2');
-
-        window.addEventListener('scroll', () => {
-            const triggerBottom = window.innerHeight / 1.5;
-
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if(sectionTop < triggerBottom) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-        });
-
-        // Image gallery and modal functionality
-        const projectsImages = {
-            1: [	//stormaze
-                'imgs/projs/stormaze/web/0.jpg', 
-                'imgs/projs/stormaze/web/1.jpg',
-                'imgs/projs/stormaze/web/2.jpg',
-                'imgs/projs/stormaze/web/3.jpg',
-                'imgs/projs/stormaze/web/4.jpg',
-                'imgs/projs/stormaze/web/5.jpg',
-                'imgs/projs/stormaze/web/6.jpg',
-                'imgs/projs/stormaze/web/7.jpg',
-                'imgs/projs/stormaze/app/1.png',
-                'imgs/projs/stormaze/app/2.jpg',
-                'imgs/projs/stormaze/app/3.jpg',
-                'imgs/projs/stormaze/app/4.jpg',
-                'imgs/projs/stormaze/app/5.png',
-                'imgs/projs/stormaze/app/6.png',
-                'imgs/projs/stormaze/app/7.png',
-                'imgs/projs/stormaze/app/8.jpg',
-            ],
-            2: [	//PSI
-                'imgs/projs/psi/1.jpg',
-                'imgs/projs/psi/2.jpg',
-                'imgs/projs/psi/3.jpg',
-                'imgs/projs/psi/4.jpg',
-                'imgs/projs/psi/5.jpg',
-                'imgs/projs/psi/6.jpg',
-            ],
-            3: [	//PGA-DCM
-                'imgs/projs/dcm/1.png',
-                'imgs/projs/dcm/2.png',
-                'imgs/projs/dcm/3.png',
-                'imgs/projs/dcm/4.png',
-                'imgs/projs/dcm/5.png',
-                'imgs/projs/dcm/6.png',
-                'imgs/projs/dcm/7.png',
-                'imgs/projs/dcm/8.png',
-            ],
-	        4: [	//Exlog
-                'imgs/projs/exlog/1.jpg',
-                'imgs/projs/exlog/2.jpg',
-                'imgs/projs/exlog/3.jpg',
-                'imgs/projs/exlog/4.jpg',
-                'imgs/projs/exlog/5.jpg',
-                'imgs/projs/exlog/6.jpg',
-                'imgs/projs/exlog/7.jpg',
-                'imgs/projs/exlog/8.jpg',
-                'imgs/projs/exlog/9.jpg',
-                'imgs/projs/exlog/10.jpg',
-            ],
-	        5: [	//IDEM
-                'imgs/projs/idem/1.jpg',
-                'imgs/projs/idem/2.jpg',
-                'imgs/projs/idem/3.jpg',
-                'imgs/projs/idem/4.jpg',
-                'imgs/projs/idem/5.jpg',
-                'imgs/projs/idem/6.jpg',
-                'imgs/projs/idem/7.jpg',
-                'imgs/projs/idem/8.jpg',
-            ],
-	        6: [	//KPI
-                'imgs/projs/kpi/1.png',
-                'imgs/projs/kpi/2.png',
-                'imgs/projs/kpi/3.png',
-                'imgs/projs/kpi/4.png',
-                'imgs/projs/kpi/5.png',
-                'imgs/projs/kpi/6.png',
-            ],
-            7: [	//Surelog
-                'imgs/projs/surelog/1.jpg',
-                'imgs/projs/surelog/2.jpg',
-                'imgs/projs/surelog/3.jpg',
-                'imgs/projs/surelog/4.jpg',
-                'imgs/projs/surelog/5.jpg',
-                'imgs/projs/surelog/6.jpg',
-                'imgs/projs/surelog/7.jpg',
-                'imgs/projs/surelog/8.jpg',
-                'imgs/projs/surelog/9.jpg',
-            ],
-        };
-
-        const imageLength = [0,15,5,7,9,7,5,8];
-        selectedGallery = 0;
-        const modalImg = document.getElementById("modalImg");
-        currentImg = 0;
-
-        function openGallery(projectId) {
-            const modal = document.getElementById("modal");
-            modal.style.display = "flex";
-            selectedGallery = projectId;
-            currentImg = 0;
-
-            // Load first image of project
-            modalImg.src = projectsImages[projectId][0];
-
-        }
-
-        function next(){
-            currentImg++;
-            mylength = imageLength[selectedGallery];
-            if(currentImg > mylength ){ currentImg = 0; }
-            modalImg.src = projectsImages[selectedGallery][currentImg];
-        }
-
-        function back(){
-            currentImg--;
-            mylength = imageLength[selectedGallery];
-            if(currentImg < 0 ){ currentImg = mylength; }
-            modalImg.src = projectsImages[selectedGallery][currentImg];
-        }
-
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-            const existingGallery = document.querySelector('.gallery');
-            if (existingGallery) {
-                existingGallery.remove();
-            }
-        }
-
-        window.onload = function() {
-            var script = document.createElement("script");
-            script.src = "external-script.js";
-            document.body.appendChild(script);
-        };
-
-        if (window.innerWidth <= 768) {
-            // Mobile screen
-            document.querySelectorAll('pre').forEach(preTag => {
-                const pTag = document.createElement('p');
-                pTag.textContent = preTag.textContent;
-                pTag.classList.add('aboutTxt');
-                preTag.replaceWith(pTag);
-            });
-        } else {
-            // Desktop screen
-            console.log("Desktop device");
-        }
-    </script>
-
+    <script type="text/javascript" src="js/web.js"></script>
 </body>
 </html>
