@@ -37,7 +37,7 @@ h1, h2 {
 	cursor: pointer;
 	text-decoration: none;
 	border: none;
-	box-shadow: 4px 4px #00000057;
+	box-shadow: 4px 4px #000000b2;
 }
 .projects {
 	display: flex;
@@ -54,7 +54,13 @@ h1, h2 {
 	position:absolute;
 	width: 100%;
 	height: 98%;
-	background: linear-gradient(to bottom, #212a31, #2e3944);
+	/* background: linear-gradient(to bottom, #212a31, #2e3944); */
+	background-image: url('../imgs/myBg.jpg');
+	background-size: cover;
+	background-position:bottom;
+	/* background-repeat: repeat-y; */
+	filter: blur(2px);
+  	-webkit-filter: blur(2px);
 }
 .projDiv{
 	width: 100%;
@@ -146,7 +152,7 @@ h1, h2 {
 	padding: 0;
 	width: 100%;
 	height: 100vh;
-	background-image: url('../imgs/frontBG.jfif');
+	background-image: url('../imgs/myBg2.jpg');
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -159,7 +165,7 @@ h1, h2 {
 	transform: translateY(-60px);
 	padding: 30px;
 	margin: 20px;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.9);
 	animation: fadeIn 3s;
 }
 @keyframes fadeIn {
