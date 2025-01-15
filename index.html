@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://noelricodev.github.io/imgs/icon.png">
     <link href="css/web.css" rel="stylesheet" type="text/css" media="all">
@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-content">
+        <div class="header-content container-fluid">
             <h2>Hi, I'm <b>Noel</b>.</h2>
             <div class="">
                 <h1>A web and mobile app developer.</h1>
@@ -19,19 +19,34 @@
     </header>
 
     <section class="about aboutBG">        
-        <div>
+        <div class="container-fluid">
+            <br><br><br>
             <h1 class="aboutTxtH">ABOUT</h1>
-            <pre class="aboutTxt" style="font-size: 13px;">
-                                                I'm Noel Rico.<br>
-                                                  I am a web and mobile app developer. <br>
-                                                   Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
-                                                     I have been working for almost 8 years in the IT industry. <br>
-                                                      I handle and perform different roles such as front-end and back-end developer<br>
-                                                       for mobile, web, and game applications for local clients. <br>
-                                                        I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, <br>
-                                                         Javascript, Jquery, Angular and MySQL.<br> 
-                                                          I also have basic knowledge in React JS, Typescript and SQL Server.
-            </pre>
+            <br><br><br><br><br>
+            <div class="aboutTxt">
+                <p id="about1" style="font-size: 15px;">
+                    I'm Noel Rico.<br>
+                      I am a web and mobile app developer. <br>
+                       Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
+                         I have been working for almost 8 years in the IT industry. <br>
+                          I handle and perform different roles such as front-end and back-end developer<br>
+                           for mobile, web, and game applications for local clients. <br>
+                            I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, <br>
+                             Javascript, Jquery, Angular and MySQL.<br> 
+                              I also have basic knowledge in React JS, Typescript and SQL Server.
+                </p>
+                                                            <!-- <pre id="about2" style="font-size: 14px;">
+                                                                  I'm Noel Rico.<br>
+                                                                    I am a web and mobile app developer. <br>
+                                                                     Currently working as a Senior Programmer at Upstart-Gorilla Geo Industries Inc.<br>
+                                                                      I have been working for almost 8 years in the IT industry. <br>
+                                                                       I handle and perform different roles such as front-end and back-end developer<br>
+                                                                        for mobile, web, and game applications for local clients. <br>
+                                                                         I have advanced skills in PHP, Laravel Framework, Ionic Framework, CSS, <br>
+                                                                          Javascript, Jquery, Angular and MySQL.<br> 
+                                                                           I also have basic knowledge in React JS, Typescript and SQL Server.
+                                                            </pre> -->
+            </div>
         </div>
     </section>
 
@@ -81,10 +96,10 @@
             <div class="projects">
                 <div class="projDiv">
                     <div class="project" onclick="openGallery(1)">
-                        <br>
-                        <img src="imgs/projs/stormaze/stormazelogo.png" class="" width="200px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <br><br><br>
+                        <img src="imgs/projs/stormaze/stormazelogo.png" class="" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">StorMaze</span></b>
-                        <br>
+                        <br><br><br>
                         <p class="just">
                             Developed using Laravel Framework with JavaScript, jQuery and CSS
                             for web app and Ionic Framework for mobile app.
@@ -95,13 +110,14 @@
                             A server manages the location of the items on the map, 
                             the list of maps, the list of stores, and adjustments on ads.
                         </p>
+                        <br><br>
                     </div>
                     <br><br>
                     <div class="project" onclick="openGallery(2)">
-                        <br>
-                        <img src="imgs/projs/psi/favicon.ico" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <br><br><br>
+                        <img src="imgs/projs/psi/favicon.ico" class="" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">PSI</span></b>
-                        <br>
+                        <br><br><br>
                         <p class="just">
                             Developed using Laravel with JavaScript, jQuery, and CSS.
                             Created for PGATECH Group of Companies, 
@@ -110,14 +126,30 @@
                             releasing test printouts from different departments, 
                             and calculating the expenses.
                         </p>
-                        <br>
+                        <br><br>
+                    </div>
+                    <br><br>
+                    <div class="project" onclick="openGallery(4)">
+                        <br><br><br>
+                        <img src="imgs/projs/exlog/Logo with text.png" class="" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <b><span style="font-size: 1.2em">Exlog</span></b>
+                        <br><br><br>
+                        <p class="just">
+                            Developed using Laravel with JavaScript, jQuery, and CSS 
+                            for web and Ionic Framework for mobile. 
+                            (Expense Log) A system that allows users to create, submit, monitor, 
+                            and approve expenses for reimbursement. 
+                            It assists in effectively managing time 
+                            and resource-consuming process of manual expense reimbursement.
+                        </p>
+                        <br><br>
                     </div>
                     <br><br>
                     <div class="project" onclick="openGallery(3)">
-                        <br>
-                        <img src="imgs/projs/dcm/pgadcmlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <br><br><br>
+                        <img src="imgs/projs/dcm/pgadcmlogo.png" class="" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">DCM</span></b>
-                        <br>
+                        <br><br><br>
                         <p class="just">
                             Developed using Laravel and Ionic Framework for mobile.
                             Created for PGATECH Group of Companies, 
@@ -125,31 +157,15 @@
                             equipment borrowing and maintenance, purchases, and transmittals. 
                             This aims to reduce paper use and manage documents digitally.
                         </p>
-                        <br>
-                    </div>
-                    <br><br>
-                    <div class="project" onclick="openGallery(4)">
-                        <br>
-                        <img src="imgs/projs/exlog/Logo with text.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
-                        <b><span style="font-size: 1.2em">Exlog (Expense Log)</span></b>
-                        <br>
-                        <p class="just">
-                            Developed using Laravel with JavaScript, jQuery, and CSS 
-                            for web and Ionic Framework for mobile. 
-                            A system that allows users to create, submit, monitor, 
-                            and approve expenses for reimbursement. 
-                            It assists in effectively managing time 
-                            and resource-consuming process of manual expense reimbursement.
-                        </p>
-                        <br>
+                        <br><br>
                     </div>
                 </div>
                 <div class="projDiv">
                     <div class="project" onclick="openGallery(5)">
-                        <br>
-                        <img src="imgs/projs/idem/idemlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <br><br>
+                        <img src="imgs/projs/idem/idemlogo.png" class="" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">IDEM</span></b>
-                        <br>
+                        <br><br><br>
                         <p class="just">
                             Developed using Laravel for API 
                             and Ionic Framework with Angular for mobile. 
@@ -163,29 +179,14 @@
                             This aims to support their risk evaluation 
                             and contact tracing thus promoting a safe environment.
                         </p>
-                        <br>
-                    </div>
-                    <br><br>
-                    <div class="project" onclick="openGallery(6)">
-                        <br>
-                        <img src="imgs/projs/kpi/geogreenlogo.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
-                        <b><span style="font-size: 1.2em">KPI</span></b>
-                        <br>
-                        <p class="just">
-                            Developed using Laravel with JavaScript, jQuery, 
-                            and CSS for web and Ionic Framework for mobile. 
-                            Created for Philippine GeoGreen Inc., 
-                            a system that allows users to view their monthly 
-                            and yearly performance as well as the whole company.
-                        </p>
-                        <br>
+                        <br><br>
                     </div>
                     <br><br>
                     <div class="project" onclick="openGallery(7)">
-                        <br>
-                        <img src="imgs/projs/surelog/surelogLOGO.png" class="" width="100px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <br><br><br>
+                        <img src="imgs/projs/surelog/surelogLOGO.png" class="" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
                         <b><span style="font-size: 1.2em">Surelog</span></b>
-                        <br>
+                        <br><br><br>
                         <p class="just">
                             Developed using Laravel with JavaScript, jQuery, 
                             and CSS for web and Ionic Framework for mobile. 
@@ -198,7 +199,22 @@
                             and the lates and absences are automatically calculated. 
                             The final report is then exported as an Excel file.
                         </p>
-                        <br>
+                        <br><br>
+                    </div>
+                    <br><br>
+                    <div class="project" onclick="openGallery(6)">
+                        <br><br><br>
+                        <img src="imgs/projs/kpi/geogreenlogo.png" class="" width="330px" height="90px" style="background-color: rgba(0, 0, 0, 0.5); padding: 5px;border-radius: 5px;">
+                        <b><span style="font-size: 1.2em">KPI</span></b>
+                        <br><br><br>
+                        <p class="just">
+                            Developed using Laravel with JavaScript, jQuery, 
+                            and CSS for web and Ionic Framework for mobile. 
+                            Created for Philippine GeoGreen Inc., 
+                            a system that allows users to view their monthly 
+                            and yearly performance as well as the whole company.
+                        </p>
+                        <br><br>
                     </div>
                 </div>
             </div>

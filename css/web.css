@@ -29,7 +29,8 @@ h1, h2 {
 	text-align: center;
 }
 .project {
-	width: 90%;
+	max-width: 90%;
+	min-height: 60vh;
 	background-color: #124e66;
 	color: white;
 	text-align: center;
@@ -47,7 +48,7 @@ h1, h2 {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 20px;
+	padding: 0px 0px 0px 40px;
 }
 .projectBG {
 	z-index: -10;
@@ -64,6 +65,7 @@ h1, h2 {
 }
 .projDiv{
 	width: 100%;
+	padding: 0px 0px 0px 40px;
 }
 /* Image gallery */
 .gallery {
@@ -189,28 +191,24 @@ h1, h2 {
 	border-style: solid;
 	border-color: rgb(5, 6, 92);
 	border-width: 2px;
-	text-align: center;
-	margin: 0 auto;
-	display: flex; 
-	justify-content: center; 
-	align-items: center;
 }
 .aboutBG {
 	background-image: url('../imgs/laptop.jpg');
 	background-size: cover;
 	background-position: bottom;
 	background-repeat: no-repeat;
-	text-align: center;
 	color: white;
 }
 .aboutTxtH{
-	transform: translateY(-20px);
-	text-align: center;
+	/* transform: translateY(-20px); */
+	/* text-align: center; */
 }
 .aboutTxt{
-	transform: translateY(-70px);
-	text-align: justify;
-	padding: 50px;
+	background-color: rgba(0, 0, 0, 0.7);
+	max-width: 70%;
+	padding: 20px;
+	text-align: center;
+	margin: 0 auto;
 }
 .companyBG {
 	background-image: url('../imgs/building1.jpg');
@@ -263,6 +261,9 @@ h1, h2 {
 		width: 45%;
 		height: auto;
 	}
+	.aboutTxt{
+		text-align: center;
+	}
 }
 @media (max-width: 480px) {
 	.company, .project {
@@ -271,5 +272,8 @@ h1, h2 {
 	.gallery img {
 		width: 100px;
 		height: 100px;
+	}
+	.aboutTxt{
+		text-align: left;
 	}
 }

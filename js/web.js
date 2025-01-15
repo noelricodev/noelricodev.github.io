@@ -135,15 +135,38 @@
             document.body.appendChild(script);
         };
 
+        document.getElementById("about1").style.display = "block";
+        document.getElementById("about2").style.display = "block";
         if (window.innerWidth <= 768) {
             // Mobile screen
-            document.querySelectorAll('pre').forEach(preTag => {
-                const pTag = document.createElement('p');
-                pTag.textContent = preTag.textContent;
-                pTag.classList.add('aboutTxt');
-                preTag.replaceWith(pTag);
-            });
+            // document.querySelectorAll('pre').forEach(preTag => {
+            //     const pTag = document.createElement('p');
+            //     pTag.textContent = preTag.textContent;
+            //     pTag.classList.add('aboutTxt');
+            //     preTag.replaceWith(pTag);
+            // });
+            // document.getElementById("about1").style.display = "block";
+            // document.getElementById("about2").style.display = "none";
         } else {
             // Desktop screen
-            console.log("Desktop device");
+            // document.getElementById("about1").style.display = "none";
+            // document.getElementById("about2").style.display = "block";
         }
+
+        window.onresize = function(event) {
+            if (window.innerWidth <= 768) {
+                // Mobile screen
+                // document.querySelectorAll('pre').forEach(preTag => {
+                //     const pTag = document.createElement('p');
+                //     pTag.textContent = preTag.textContent;
+                //     pTag.classList.add('aboutTxt');
+                //     preTag.replaceWith(pTag);
+                // });
+                // document.getElementById("about1").style.display = "block";
+                // document.getElementById("about2").style.display = "none";
+            } else {
+                // Desktop screen
+                // document.getElementById("about1").style.display = "none";
+                // document.getElementById("about2").style.display = "block";
+            }
+        };
